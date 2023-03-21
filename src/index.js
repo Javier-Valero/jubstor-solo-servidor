@@ -1,6 +1,7 @@
 const express = require('express'); // Framework de nodejs
 const morgan = require('morgan'); // Lista las peticiones que llegan al servidor en consola
 const cors = require('cors') // Permite comunicar servidores en dominos distintos
+const PORT = process.env.PORT ?? 4000
 
 const tareasRutas = require('./rutas/tareas.rutas');
 const usuariosRutas = require('./rutas/usuarios.rutas');
@@ -23,5 +24,5 @@ app.use((err, req, res, next
 })
 
 
-app.listen(4000)
+app.listen(PORT)
 console.log('Server on port 4000')
